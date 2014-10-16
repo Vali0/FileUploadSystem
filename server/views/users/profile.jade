@@ -1,0 +1,15 @@
+extends ../shared/layout
+block main-content
+    .container
+        form
+            label Username:
+            label(id="username") #{currentUser.username}
+            br
+            label Points:
+            input(type="text" id="points" class="form-control" value="#{currentUser.points}")
+            label Confirm password:
+            input(type="text" id="password" class="form-control")
+            input(type="button" id="update-profile" class="btn btn-lg" value="Update")
+block page-scripts
+    script(src="js/updateUserInfoController.js")
+    script(src="js/httpRequester.js")
